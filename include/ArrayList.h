@@ -24,16 +24,14 @@ class ArrayList : public List<T> {
             this->n++;
         }
         if(this->n == MAX_SIZE) {
-            printf("OVERFLOW: Sirul este plin nu se mai poate mari");
-            return;
+            throw "OverflowException";
         }
         this->array[this->current] = obj;
         this->current++;
     };
     void push(int index, T obj) {
         if(this->n == MAX_SIZE) {
-            printf("OVERFLOW: Sirul este plin nu se mai poate mari");
-            return;
+            throw "OverflowException";
         }
         for(int i = this->n - 1; i >= index; i--) {
             this->array[i+1] = this->array[i];
@@ -63,6 +61,9 @@ class ArrayList : public List<T> {
         return this->array[index];
     };
     T remove(int index) {
+        if(this->n == 0) {
+            throw "UnderflowException";
+        }
         T obj = this->array[index];
         for(int i = index; i < this->n; i++) {
             this->array[i] = this->array[i+1];

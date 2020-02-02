@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 #set the project name
-project(Tutorial VERSION 1.0.0)
+project(Collections VERSION 1.0.0)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)

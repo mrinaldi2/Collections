@@ -2,11 +2,12 @@
 using namespace std;
 #include "List.h"
 #include "ArrayList.h"
+#include "LinkedList.h"
 
 template<class T>
-void citeste(List<T> *list) {
+void citeste(List<T> *list, int n = 0) {
     T val;
-    for(int i = 0; i < list->size(); i++) {
+    for(int i = 0; i < ((n == 0) ? list->size() : n); i++) {
         printf("Introduceti valoare pentru x[%d]: ", i);
         scanf("%d", &val);
         list->push(val);
@@ -35,9 +36,10 @@ int main() {
     char c;
     printf("Specifica marime lista: ");
     scanf("%d", &n);
-    List<int> *myList = new ArrayList<int>(n);
-    citeste(myList);
+    List<int> *myList = new LinkedList<int>();
+    citeste(myList, n);
     scrie(myList);
+    
 
     printf("\nIntroduceti indicile elementului pe care doriti sa il accesati: ");
     scanf("%d", &i);
@@ -68,6 +70,8 @@ int main() {
     n = eliminare(myList, k);
     printf("Sirul este acum\n");
     scrie(myList);
+    
+    
     return 0;
 
 }
