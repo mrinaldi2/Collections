@@ -1,6 +1,6 @@
 #ifndef ARRAY_LIST_H
 #define ARRAY_LIST_H
-#include "List"
+#include "List.h"
 
 template<class T>
 class ArrayList : public List<T> {

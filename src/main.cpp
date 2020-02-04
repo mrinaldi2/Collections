@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-#include "List.h"
 #include "ArrayList.h"
 #include "LinkedList.h"
+#include "BinaryTree.h"
 
 template<class T>
 void citeste(List<T> *list, int n = 0) {
@@ -32,6 +32,24 @@ int eliminare(List<T> *list, int k) {
 }
 
 int main() {
+
+    Tree<int>* binary = new BinaryTree<int>();
+    binary->insert(10);
+    binary->insert(8);
+    binary->insert(15);
+    binary->insert(4);
+    binary->insert(20);
+    binary->insert(12);
+    binary->insert(2);
+    binary->insert(6);
+    binary->insert(13);
+    binary->print();
+    TreeNode<int>* node = binary->search(12);
+    printf("Value searched: %d", node->key_value );
+    binary->destroy_tree();
+
+    return 0;
+
     int n, i, val, elem_nou, k;
     char c;
     printf("Specifica marime lista: ");
