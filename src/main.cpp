@@ -35,17 +35,17 @@ int main() {
 
     Tree<int>* binary = new BinaryTree<int>();
     binary->insert(10);
-    binary->insert(8);
-    binary->insert(15);
     binary->insert(4);
-    binary->insert(20);
-    binary->insert(12);
-    binary->insert(2);
-    binary->insert(6);
-    binary->insert(13);
+    binary->insert(21);
+    binary->insert(1);
+    binary->insert(9);
+    binary->insert(15);
+    binary->insert(23);
+    binary->insert(28);
     binary->print();
-    TreeNode<int>* node = binary->search(12);
-    printf("Value searched: %d", node->key_value );
+    printf("size of nodes %d", binary->size());
+    //TreeNode<int>* node = binary->search(12);
+    //printf("Value searched: %d", node->key_value );
     binary->destroy_tree();
 
     return 0;

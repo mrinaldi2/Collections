@@ -74,6 +74,15 @@ class BinaryTree : public Tree<T> {
                 this->postOrderPrint(leaf->right);
             printf("%d, ", leaf->key_value);
         }
+
+        int size(TreeNode<T> *leaf) {
+            if(leaf != nullptr) {
+                int left = this->size(leaf->left);
+                int right = this->size(leaf->right);
+                return left + right + 1;
+            }
+            return 0;
+        }
          
         TreeNode<T> *root;
     public:
@@ -82,6 +91,9 @@ class BinaryTree : public Tree<T> {
        }
        ~BinaryTree() {
            this->destroy_tree();
+       }
+       int size() {
+           return this->size(this->root);
        }
        void insert(T obj) {
            if(this->root!=nullptr)
